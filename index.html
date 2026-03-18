@@ -4,227 +4,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Void Pixeler | Portfolio</title>
+<title>void_pixeler | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.5/dist/lenis.min.js"></script>
 
 <style>
 
-:root{
---accent:#f5a623;
---text:#ffffff;
---muted:#bbbbbb;
-}
-
-*{
-box-sizing:border-box;
-}
-
 body{
 margin:0;
 background:#000;
-color:var(--text);
+color:white;
 font-family:'Plus Jakarta Sans',sans-serif;
 }
 
-/* NAVBAR */
-
-nav{
-position:fixed;
-width:100%;
-top:0;
-background:rgba(0,0,0,.7);
-backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(255,255,255,.08);
-z-index:100;
-}
-
-.nav-inner{
-max-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:16px 20px;
-}
-
-.logo{
-width:42px;
-}
-
-.nav-links{
-display:flex;
-gap:28px;
-font-size:13px;
-letter-spacing:.12em;
-text-transform:uppercase;
-}
-
-.nav-links a{
-color:var(--muted);
-text-decoration:none;
-transition:.3s;
-}
-
-.nav-links a:hover{
-color:var(--accent);
-}
-
-/* SECTIONS */
-
-section{
-padding:120px 20px;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-width:100%;
-text-align:center;
-}
-
-.title{
-font-size:36px;
-margin-bottom:60px;
-}
-
 /* HERO */
-
 .hero{
-padding-top:200px;
-padding-bottom:200px;
-background:radial-gradient(circle at top,#111,#000 70%);
+background:radial-gradient(circle at center,#111,#000);
 }
 
-.hero h1{
-font-size:64px;
-margin:0;
-}
-
-.hero span{
-color:var(--accent);
-}
-
-.hero p{
-margin-top:16px;
-color:var(--muted);
-letter-spacing:.3em;
-text-transform:uppercase;
-}
-
-/* GRID */
-
-.grid3{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:28px;
-}
-
-.grid4{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:22px;
-}
-
-/* CARDS */
-
-.card{
-background:#0a0a0a;
-border:1px solid rgba(255,255,255,.08);
-border-radius:14px;
-overflow:hidden;
-transition:.35s;
-cursor:pointer;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:var(--accent);
-}
-
-/* IMAGES */
-
-.work-img{
-width:100%;
-max-height:70vh;
-object-fit:contain;
-background:#000;
-}
-
-.brand-img{
-width:100%;
-max-height:70vh;
-object-fit:contain;
-padding:10px;
-}
-
-.menu-preview{
-width:100%;
-max-height:55vh;
-object-fit:contain;
-}
-
-/* VIDEO */
-
-video{
-width:100%;
-max-height:70vh;
-object-fit:contain;
-border-radius:12px;
-}
-
-/* MODAL */
-
-.modal{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.94);
-display:none;
-align-items:center;
-justify-content:center;
-padding:30px;
-z-index:200;
-overflow:auto;
-}
-
-.modal img{
-max-width:95vw;
-max-height:95vh;
-object-fit:contain;
-}
-
-/* CONTACT BUTTONS */
-
-.contact-buttons{
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.contact-btn{
-padding:16px 36px;
-border-radius:10px;
-border:1px solid rgba(255,255,255,.15);
-background:#0a0a0a;
-color:white;
-text-decoration:none;
-transition:.3s;
-}
-
-.contact-btn:hover{
-background:var(--accent);
-color:#000;
-border-color:var(--accent);
-}
-
-/* TEXT ANIMATION */
-
-.fade-up{
+/* HERO TEXT ANIMATION (ONLY HERE) */
+.hero-title{
 opacity:0;
-transform:translateY(40px);
-animation:fadeUp .9s ease forwards;
+transform:translateY(50px);
+animation:fadeUp 1s ease forwards;
+}
+
+.hero-sub{
+opacity:0;
+transform:translateY(50px);
+animation:fadeUp 1s ease forwards;
+animation-delay:0.3s;
 }
 
 @keyframes fadeUp{
@@ -234,23 +45,57 @@ transform:translateY(0);
 }
 }
 
-/* MOBILE */
-
-@media (max-width:768px){
-
-.hero h1{
-font-size:42px;
+/* SECTION */
+section{
+padding:110px 20px;
 }
 
-.title{
-font-size:28px;
+/* CARD */
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+transition:0.3s;
 }
 
-.nav-links{
-gap:16px;
-font-size:11px;
+.card:hover{
+transform:translateY(-6px);
+border-color:#f5a623;
 }
 
+/* IMAGE */
+.img{
+width:100%;
+height:100%;
+object-fit:contain;
+}
+
+/* MODAL */
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.95);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:999;
+padding:20px;
+}
+
+.modal img{
+max-width:95vw;
+max-height:95vh;
+object-fit:contain;
+}
+
+/* BUTTON */
+.btn{
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+background:#f5a623;
+color:#000;
 }
 
 </style>
@@ -259,202 +104,155 @@ font-size:11px;
 
 <body>
 
-<nav>
-<div class="nav-inner">
+<!-- NAV -->
 
-<img src="V.png" class="logo">
-
-<div class="nav-links">
-<a href="#work">Work</a>
-<a href="#brand">Brand</a>
-<a href="#contact">Contact</a>
-</div>
-
+<nav class="fixed w-full z-50 bg-black/70 px-6 py-4 flex justify-between items-center">
+<img src="V.png" class="w-10">
+<div class="flex gap-6 text-sm uppercase tracking-widest text-gray-300">
+<a href="#work" class="hover:text-[#f5a623]">Work</a>
+<a href="#brand" class="hover:text-[#f5a623]">Brand</a>
+<a href="#contact" class="hover:text-[#f5a623]">Contact</a>
 </div>
 </nav>
 
-<section class="hero">
+<!-- HERO -->
 
-<div class="container fade-up">
+<section class="hero h-screen flex flex-col justify-center items-center text-center">
 
-<h1>VOID<span>_</span>PIXELER</h1>
+<h1 class="text-6xl md:text-8xl font-extrabold hero-title">
+VOID<span class="text-[#f5a623]">_</span>PIXELER
+</h1>
 
-<p>Graphic & Creative Designer</p>
-
-</div>
+<p class="text-gray-400 mt-4 uppercase tracking-[0.3em] hero-sub">
+Graphic & Creative Designer
+</p>
 
 </section>
 
-<section>
+<!-- VIDEO -->
 
-<div class="container fade-up">
+<section class="text-center">
+<h2 class="text-3xl md:text-4xl font-bold mb-10">Studio Motion</h2>
 
-<h2 class="title">Studio Motion</h2>
-
-<video autoplay muted loop playsinline controls>
+<div class="max-w-5xl mx-auto">
+<video autoplay muted loop playsinline controls class="w-full rounded-xl">
 <source src="animation.mp4" type="video/mp4">
 </video>
+</div>
+</section>
+
+<!-- WORK -->
+
+<section id="work" class="max-w-6xl mx-auto">
+
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Selected Work</h2>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="card p-3 cursor-pointer" onclick="openModal('burger1.png')">
+<img src="burger1.png" class="img">
+</div>
+
+<div class="card p-3 cursor-pointer" onclick="openModal('burger2.png')">
+<img src="burger2.png">
+</div>
+
+<div class="card p-3 cursor-pointer" onclick="openModal('pizza1.png')">
+<img src="pizza1.png">
+</div>
+
+</div>
+
+<h3 class="text-2xl mt-16 mb-6 text-center">Restaurant Menu</h3>
+
+<div class="grid md:grid-cols-4 gap-4">
+
+<div class="card p-2" onclick="openMenu()"><img src="1.png"></div>
+<div class="card p-2" onclick="openMenu()"><img src="2.png"></div>
+<div class="card p-2" onclick="openMenu()"><img src="3.png"></div>
+<div class="card p-2" onclick="openMenu()"><img src="4.png"></div>
 
 </div>
 
 </section>
 
-<section id="work">
+<!-- BRAND -->
 
-<div class="container fade-up">
+<section id="brand" class="max-w-6xl mx-auto">
 
-<h2 class="title">Selected Work</h2>
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Brand Work</h2>
 
-<div class="grid3">
+<div class="grid md:grid-cols-2 gap-6">
 
-<div class="card" onclick="openModal('burger1.png')">
-<img src="burger1.png" class="work-img">
+<div class="card p-4" onclick="openModal('fanta.png')">
+<img src="fanta.png">
 </div>
 
-<div class="card" onclick="openModal('burger2.png')">
-<img src="burger2.png" class="work-img">
-</div>
-
-<div class="card" onclick="openModal('pizza1.png')">
-<img src="pizza1.png" class="work-img">
-</div>
-
-</div>
-
-<h3 style="margin-top:80px;margin-bottom:30px;">Restaurant Menu Design</h3>
-
-<div class="grid4">
-
-<div class="card" onclick="openMenu()">
-<img src="1.png" class="menu-preview">
-</div>
-
-<div class="card" onclick="openMenu()">
-<img src="2.png" class="menu-preview">
-</div>
-
-<div class="card" onclick="openMenu()">
-<img src="3.png" class="menu-preview">
-</div>
-
-<div class="card" onclick="openMenu()">
-<img src="4.png" class="menu-preview">
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="brand">
-
-<div class="container fade-up">
-
-<h2 class="title">Brand Work</h2>
-
-<div class="grid3">
-
-<div class="card" onclick="openModal('fanta.png')">
-<img src="fanta.png" class="brand-img">
-</div>
-
-<div class="card" onclick="openModal('o.png')">
-<img src="o.png" class="brand-img">
-</div>
-
+<div class="card p-4" onclick="openModal('o.png')">
+<img src="o.png">
 </div>
 
 </div>
 
 </section>
 
-<section>
+<!-- CONTACT -->
 
-<div class="container fade-up">
+<section id="contact" class="text-center">
 
-<h2 class="title">Professional Identity</h2>
+<h2 class="text-4xl md:text-6xl font-extrabold mb-12">
+ARE YOU <br>
+<span class="text-[#f5a623] italic">Ready?</span>
+</h2>
 
-<div class="grid3">
+<button onclick="toggleContact()" 
+class="btn px-10 py-4 bg-white text-black font-bold uppercase rounded-full">
+LET'S BUILD TOGETHER </button>
 
-<div class="card" onclick="openModal('card1.png')">
-<img src="card1.png" class="work-img">
-</div>
+<div id="contactLinks" class="mt-12 hidden flex flex-col md:flex-row justify-center gap-8 text-left">
 
-<div class="card" onclick="openModal('card2.png')">
-<img src="card2.png" class="work-img">
-</div>
+<a href="https://instagram.com/void_pixeler" target="_blank"
+class="border-l-2 border-[#f5a623] pl-4 hover:text-[#f5a623]">
+Instagram - @void_pixeler </a>
 
-</div>
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<div class="container fade-up">
-
-<h2 class="title">Let's Work Together</h2>
-
-<div class="contact-buttons">
-
-<a href="https://instagram.com/void_pixeler" target="_blank" class="contact-btn">
-Instagram
-</a>
-
-<a href="https://t.me/its_ayush-here" target="_blank" class="contact-btn">
-Telegram
-</a>
-
-</div>
+<a href="https://t.me/its_ayush-here" target="_blank"
+class="border-l-2 border-[#f5a623] pl-4 hover:text-[#f5a623]">
+Telegram - its_ayush-here </a>
 
 </div>
 
 </section>
+
+<!-- MODALS -->
 
 <div id="modal" class="modal" onclick="closeModal()">
 <img id="modalImg">
 </div>
 
 <div id="menuModal" class="modal" onclick="closeMenu()">
-
-<div style="display:grid;gap:80px;max-width:900px;">
+<div class="space-y-12 max-w-3xl">
 <img src="1.png">
 <img src="2.png">
 <img src="3.png">
 <img src="4.png">
 </div>
-
 </div>
 
 <script>
 
+/* SMOOTH SCROLL */
 const lenis = new Lenis({duration:1.2})
-
-function raf(time){
-lenis.raf(time)
-requestAnimationFrame(raf)
-}
-
+function raf(time){lenis.raf(time);requestAnimationFrame(raf)}
 requestAnimationFrame(raf)
 
-function openModal(src){
-document.getElementById("modal").style.display="flex"
-document.getElementById("modalImg").src=src
-}
+/* MODAL */
+function openModal(src){modal.style.display="flex";modalImg.src=src}
+function closeModal(){modal.style.display="none"}
+function openMenu(){menuModal.style.display="flex"}
+function closeMenu(){menuModal.style.display="none"}
 
-function closeModal(){
-document.getElementById("modal").style.display="none"
-}
-
-function openMenu(){
-document.getElementById("menuModal").style.display="flex"
-}
-
-function closeMenu(){
-document.getElementById("menuModal").style.display="none"
-}
+/* CONTACT */
+function toggleContact(){contactLinks.classList.toggle("hidden")}
 
 </script>
 
